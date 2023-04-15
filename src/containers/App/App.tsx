@@ -21,9 +21,9 @@ const DefaultPage = React.lazy(() => import("../index"));
 
 function App() {
   useEffect(() => {
-    console.log("Marketplace APP: Widget Mounted");
+    console.log("CS Marketplace APP: Widget Mounted");
     return () => {
-      console.log("Marketplace APP: Widget UnMounted");
+      console.log("CS Marketplace APP: Widget UnMounted");
     };
   }, []);
 
