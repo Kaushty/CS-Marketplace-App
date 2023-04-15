@@ -11,7 +11,7 @@ const AppConfigurationExtension = () => {
   const appConfig = useRef<any>();
 
   useEffect(() => {
-    appSDK?.pulse("App Configuration UI Location loaded", { appUid: appSDK.appUID });
+    // appSDK?.pulse("App Configuration UI Location loaded", { appUid: appSDK.appUID });
     appConfig.current = appSDK?.location.AppConfigWidget;
     appConfig.current?.installation.setValidity(isValid, { message: "Invalid Configuration" });
   }, []);
