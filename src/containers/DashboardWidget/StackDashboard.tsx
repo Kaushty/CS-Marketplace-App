@@ -8,7 +8,7 @@ const StackDashboardExtension = () => {
   const appSDK = useContext(MarketplaceAppContext).appSdk;
 
   useEffect(() => {
-    // appSDK?.pulse("Stack Dashboard UI Location loaded", { appUid: appSDK.appUID });
+    appSDK?.pulse("Stack Dashboard UI Location loaded", { appUid: appSDK.appUID });
   }, []);
 
   return (

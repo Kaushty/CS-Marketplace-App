@@ -8,7 +8,7 @@ const EntrySidebarExtension = () => {
   const appSDK = useContext(MarketplaceAppContext).appSdk;
 
   useEffect(() => {
-    // appSDK?.pulse("Entry Sidebar UI Location loaded", { appUid: appSDK.appUID });
+    appSDK?.pulse("Entry Sidebar UI Location loaded", { appUid: appSDK.appUID });
   }, []);
 
   return (

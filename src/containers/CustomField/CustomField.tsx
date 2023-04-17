@@ -8,7 +8,7 @@ const CustomFieldExtension = () => {
   const appSDK = useContext(MarketplaceAppContext).appSdk;
 
   useEffect(() => {
-    // appSDK?.pulse("Custom Field UI Location loaded", { appUid: appSDK.appUID });
+    appSDK?.pulse("Custom Field UI Location loaded", { appUid: appSDK.appUID });
   }, []);
 
   return (
