@@ -11,8 +11,10 @@ export default ContentstackSDK.init().then(async (sdk) => {
   sdk.pulse("JSON RTE UI Location loaded", { uid: sdk.currentUser?.uid });
   const RTE = await extensionObj["RTEPlugin"];
   if (!RTE) return;
+  console.log("KS APP: SDK INIT", sdk);
 
   const RtePlugin = RTE("RTE Plugin", (rte) => {
+    console.log("KS APP: RTE INIT", rte);
     return {
       title: "JSON-RTE-Plugin",
       icon: <img style={{ padding: "0 6px" }} src={editIcon} />,

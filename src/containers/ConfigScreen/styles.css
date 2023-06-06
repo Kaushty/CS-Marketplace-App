@@ -1,0 +1,38 @@
+.app-config {
+  box-sizing: border-box;
+  display: flex;
+  background: #f7f9fc;
+  width: auto;
+  height: 575px;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #a9b6cb;
+  text-align: center;
+  margin: 15px;
+  border-radius: 8px;
+}
+
+.app-config-container {
+  width: 50%;
+}
+
+.app-config-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: flex;
+  justify-content: space-between;
+}

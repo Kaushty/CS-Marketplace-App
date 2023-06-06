@@ -8,7 +8,7 @@ const AssetSidebarExtension = () => {
   const appSDK = useContext(MarketplaceAppContext).appSdk;
 
   useEffect(() => {
-    appSDK?.pulse("Asset Sidebar UI Location loaded", { appUid: appSDK.appUID });
+    // appSDK?.pulse("Asset Sidebar UI Location loaded", { appUid: appSDK.appUID });
   }, []);
 
   return (

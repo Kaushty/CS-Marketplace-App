@@ -8,7 +8,10 @@ const StackDashboardExtension = () => {
   const appSDK = useContext(MarketplaceAppContext).appSdk;
 
   useEffect(() => {
-    appSDK?.pulse("Stack Dashboard UI Location loaded", { appUid: appSDK.appUID });
+    // appSDK?.pulse("Stack Dashboard UI Location loaded", { appUid: appSDK.appUID });
+    const iframeWrapperRef = ref.current;
+    (window as any).iframeRef = null;
+    // appSDK.modal.setBackgroundElement(iframeWrapperRef);
   }, []);
 
   return (
