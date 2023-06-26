@@ -1,36 +1,34 @@
-import { useContext, useEffect, useRef } from "react";
-import { Button, cbModal } from "@contentstack/venus-components";
+import { useContext, useEffect } from "react";
+import { Button, openUploadAssetModal } from "@contentstack/venus-components";
 
-import "@contentstack/venus-components/build/main.css";
 import Icon from "../../assets/Icon.svg";
 import localeTexts from "../../common/locales/en-us/index";
 import parse from "html-react-parser";
 import { MarketplaceAppContext } from "../../common/contexts/marketplaceContext";
-import SelectModal from "./SelectModal";
 import "./styles.css";
 
 const StackDashboardExtension = () => {
   const appSDK = useContext(MarketplaceAppContext).appSdk;
-  const ref = useRef(null);
 
   useEffect(() => {
     appSDK?.pulse("Stack Dashboard UI Location loaded", { appUid: appSDK.appUID });
-    const iframeWrapperRef = ref.current;
-    (window as any).iframeRef = iframeWrapperRef;
-    (window as any).postRobot = appSDK.postRobot;
+    console.log("CS APP: App iframeRef", window["iframeRef"]);
   }, []);
 
   const handleClick = (e) => {
-    cbModal({
-      component: (props) => <SelectModal {...props} />,
-      modalProps: {
-        size: "max",
+    openUploadAssetModal({
+      sdk: appSDK,
+      onSubmit: (e) => {
+        console.log("CS APP: Upload Successfull", e);
+      },
+      onCancel: () => {
+        console.log("CS APP: Upload Cancelled");
       },
     });
   };
 
   return (
-    <div ref={ref} className="dashboard">
+    <div className="dashboard">
       <div className="dashboard-container">
         <div className="dashboard-icon">
           <img src={Icon} alt="icon" />

@@ -1,4 +1,7 @@
 import React, { Suspense, useEffect } from "react";
+
+import "@contentstack/venus-components/build/main.css";
+
 import { ErrorBoundary } from "../../components/ErrorBoundary";
 import { MarketplaceAppProvider } from "../../common/providers/MarketplaceAppProvider";
 import { Route, Routes } from "react-router-dom";

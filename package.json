@@ -6,7 +6,7 @@
     "dist"
   ],
   "dependencies": {
-    "@contentstack/app-sdk": "^1.5.0",
+    "@contentstack/app-sdk": "github:contentstack/app-sdk#develop",
     "@contentstack/venus-components": "^2.0.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.43",

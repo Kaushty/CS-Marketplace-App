@@ -25,8 +25,10 @@ export const MarketplaceAppProvider: React.FC<ProviderProps> = ({ children }) =>
     try {
       ContentstackAppSDK.init()
         .then(async (appSdk) => {
-          console.log("App SDK: Initialization Succeeded", appSdk);
+          console.log("CS App SDK: Initialization Succeeded", appSdk);
           const appConfig = await appSdk.getConfig();
+          const appVersion = await appSdk.getAppVersion();
+          console.log("CS App SDK: App Version: ", appVersion);
           setAppSdk(appSdk);
           setConfig(appConfig);
         })
