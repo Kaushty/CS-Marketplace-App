@@ -8,6 +8,8 @@ import "./index.css";
 import { IRteParam } from "@contentstack/app-sdk/dist/src/RTE/types";
 
 export default ContentstackSDK.init().then(async (sdk) => {
+  const version = await sdk.getAppVersion();
+  console.log("KS APP: RTE Version", version, window["iframeRef"]);
   const extensionObj = await sdk["location"];
   sdk.pulse("JSON RTE UI Location loaded", { uid: sdk.currentUser?.uid });
   const RTE = await extensionObj["RTEPlugin"];
