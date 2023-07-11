@@ -9,7 +9,6 @@ import { useMemo } from "react";
  */
 export const useAppLocation = (): { locationName: string; location: any } => {
   const appSdk = useAppSdk();
-  console.log("KS SDK", appSdk?.location);
   const locations = useMemo(() => keys(appSdk?.location), [appSdk]);
 
   /**

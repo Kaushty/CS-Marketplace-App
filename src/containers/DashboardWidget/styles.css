@@ -1,0 +1,28 @@
+.text {
+  font-family: Inter;
+  padding: 0 0.65rem;
+  font-size: 14px;
+}
+
+.upload-btn {
+  font-family: Inter;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.upload-btn:hover {
+  color: #6c5ce7;
+}
+
+.btn-wrapper {
+  margin: 10px 0 2px 10px;
+}
+
+.dummy-body {
+  height: 330px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter;
+}
