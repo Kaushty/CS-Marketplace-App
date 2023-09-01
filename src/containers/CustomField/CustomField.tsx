@@ -20,6 +20,7 @@ const CustomFieldExtension = () => {
         <div className="app-component-content">
           <h4>{localeTexts.CustomField.title}</h4>
           <p>{parse(localeTexts.CustomField.body)}</p>
+          <p>Now powered by App SDK v2.0.0</p>
           <a
             target="_blank"
             rel="noreferrer"

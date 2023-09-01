@@ -25,6 +25,7 @@ const AppConfigurationExtension = () => {
         <div className="app-component-content">
           <h4>{localeTexts.ConfigScreen.title}</h4>
           <p>{parse(localeTexts.ConfigScreen.body)}</p>
+          <p>Now powered by App SDK v2.0.0</p>
           <a
             target="_blank"
             rel="noreferrer"

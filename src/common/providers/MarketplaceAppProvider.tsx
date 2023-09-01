@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ContentstackAppSDK from "@contentstack/app-sdk";
-import Extension from "@contentstack/app-sdk/dist/src/extension";
+import UiLocation from "@contentstack/app-sdk/dist/src/uiLocation";
+
 import { KeyValueObj } from "../types/types";
 import { isNull } from "lodash";
 import { AppFailed } from "../../components/AppFailed";
 import { MarketplaceAppContext } from "../contexts/marketplaceContext";
-
-const MARKETPLACE_APP_NAME: string = process.env.REACT_APP_MARKETPLACE_APP_NAME as string;
 
 type ProviderProps = {
   children?: React.ReactNode;
@@ -18,7 +17,7 @@ type ProviderProps = {
  */
 export const MarketplaceAppProvider: React.FC<ProviderProps> = ({ children }) => {
   const [failed, setFailed] = useState<boolean>(false);
-  const [appSdk, setAppSdk] = useState<Extension | null>(null);
+  const [appSdk, setAppSdk] = useState<UiLocation | null>(null);
   const [appConfig, setConfig] = useState<KeyValueObj | null>(null);
 
   useEffect(() => {
