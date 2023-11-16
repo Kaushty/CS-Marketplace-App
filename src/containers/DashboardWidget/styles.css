@@ -26,3 +26,9 @@
   justify-content: center;
   font-family: Inter;
 }
+
+.modal-page-wrapper {
+  /* width: calc(100vw - 300px) !important;
+  height: calc(100vh - 100px) !important;
+  border-radius: 10px !important; */
+}

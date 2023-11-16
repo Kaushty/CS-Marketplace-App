@@ -1,11 +1,19 @@
-import { ModalFooter, ModalBody, ModalHeader, ButtonGroup, Button } from "@contentstack/venus-components";
+import {
+  // ModalFooter, ModalBody, ModalHeader, ButtonGroup,
+  Button,
+} from "@contentstack/venus-components";
+import "./styles.css";
 
 const SelectModal = (props) => {
   return (
-    <>
-      <ModalHeader title={"Select Asset"} closeModal={props.closeModal} />
+    <div className="modal-page-wrapper">
+      <div className="dummy-body">Contenstack Asset Picker</div>
+      <Button onClick={props.closeModal} buttonType="light">
+        Cancel
+      </Button>
+      {/* <ModalHeader title={"Select Asset"} closeModal={props.closeModal} />
       <ModalBody className="modalBodyCustomClass">
-        <div className="dummy-body">Contenstack Asset Picker</div>
+      
       </ModalBody>
       <ModalFooter>
         <ButtonGroup>
@@ -16,8 +24,8 @@ const SelectModal = (props) => {
             Add Selected Asset
           </Button>
         </ButtonGroup>
-      </ModalFooter>
-    </>
+      </ModalFooter> */}
+    </div>
   );
 };
 

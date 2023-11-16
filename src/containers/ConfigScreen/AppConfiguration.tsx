@@ -1,9 +1,9 @@
-import { useContext, useEffect, useRef, useState } from "react";
 import parse from "html-react-parser";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import Icon from "../../assets/appconfig.svg";
-import localeTexts from "../../common/locales/en-us/index";
 import { MarketplaceAppContext } from "../../common/contexts/marketplaceContext";
+import localeTexts from "../../common/locales/en-us/index";
 
 const AppConfigurationExtension = () => {
   const appSDK = useContext(MarketplaceAppContext).appSdk;
@@ -11,9 +11,16 @@ const AppConfigurationExtension = () => {
   const appConfig = useRef<any>();
 
   useEffect(() => {
-    appSDK?.pulse("App Configuration UI Location loaded", { appUid: appSDK.appUID });
     appConfig.current = appSDK?.location.AppConfigWidget;
     appConfig.current?.installation.setValidity(isValid, { message: "Invalid Configuration" });
+
+    async function asyncOp() {
+      const branches = await appSDK.stack.getAllBranches();
+      console.log("KS APP: All Branches", branches);
+    }
+    const region = appSDK.getCurrentRegion();
+    console.log("KS APP: Region", region);
+    asyncOp();
   }, []);
 
   return (

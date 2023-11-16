@@ -1,9 +1,9 @@
 import React from "react";
-import Extension from "@contentstack/app-sdk/dist/src/extension";
 import { KeyValueObj } from "../types/types";
+import UiLocation from "@contentstack/app-sdk/dist/src/uiLocation";
 
 export type MarketplaceAppContextType = {
-  appSdk: Extension | null;
+  appSdk: UiLocation | null;
   appConfig: KeyValueObj | null;
 };
 
