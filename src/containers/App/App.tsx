@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { EntrySidebarExtensionProvider } from "../../common/providers/EntrySidebarExtensionProvider";
 import { AppConfigurationExtensionProvider } from "../../common/providers/AppConfigurationExtensionProvider";
 import { CustomFieldExtensionProvider } from "../../common/providers/CustomFieldExtensionProvider";
+import FieldModifierWidget from "../FieldModifierWidget";
 
 /**
  * All the routes are Lazy loaded.
@@ -20,13 +21,7 @@ const PageNotFound = React.lazy(() => import("../404/404"));
 const DefaultPage = React.lazy(() => import("../index"));
 
 function App() {
-  useEffect(() => {
-    console.log("CS Marketplace APP: Widget Mounted");
-    return () => {
-      console.log("CS Marketplace APP: Widget UnMounted");
-    };
-  }, []);
-
+  console.log("Location", window.location);
   return (
     <ErrorBoundary>
       <MarketplaceAppProvider>
@@ -78,6 +73,7 @@ function App() {
               </Suspense>
             }
           />
+          <Route path="/field-modifier" element={<FieldModifierWidget />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </MarketplaceAppProvider>

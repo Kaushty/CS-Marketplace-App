@@ -1,15 +1,33 @@
-import Icon from "../../assets/sidebarwidget.svg";
-import localeTexts from "../../common/locales/en-us/index";
+import { Button, openUploadAssetModal } from "@contentstack/venus-components";
 import parse from "html-react-parser";
+
 import { useContext, useEffect } from "react";
+import Icon from "../../assets/sidebarwidget.svg";
 import { MarketplaceAppContext } from "../../common/contexts/marketplaceContext";
+import localeTexts from "../../common/locales/en-us/index";
 
 const EntrySidebarExtension = () => {
   const appSDK = useContext(MarketplaceAppContext).appSdk;
 
   useEffect(() => {
-    appSDK?.pulse("Entry Sidebar UI Location loaded", { appUid: appSDK.appUID });
+    async function asyncOp() {
+      const field = appSDK.location.SidebarWidget.entry.getField("title");
+      // setTimeout(() => {
+      //   field.setData("Hello World");
+      // }, 2000);
+    }
+    asyncOp();
   }, []);
+
+  const handleClick = (e) => {
+    console.log("APP CLICK", Date.now());
+    openUploadAssetModal({
+      sdk: appSDK,
+      onSubmit: (e) => {
+        console.log("KS APP: Upload", e);
+      },
+    });
+  };
 
   return (
     <div className="entry-sidebar">
@@ -27,6 +45,9 @@ const EntrySidebarExtension = () => {
             {localeTexts.SidebarWidget.button.learnMore}
           </a>
         </div>
+        <Button buttonType="primary" onClick={handleClick}>
+          Open Modal
+        </Button>
       </div>
     </div>
   );
