@@ -20,7 +20,7 @@ const AssetSidebarExtension = () => {
 
       // Create a File object from the Blob
       const file = new File([fileBlob], fileName);
-      const res = await appSDK.location.AssetSidebarWidget.replaceAsset(file);
+      const res = await appSDK?.location?.AssetSidebarWidget?.replaceAsset(file);
       console.log("KS APP: Dashboard", res);
     }
     const updateCallback = (e) => {
@@ -29,8 +29,8 @@ const AssetSidebarExtension = () => {
     const saveCallback = (e) => {
       console.log("KS APP: On Save", e);
     };
-    appSDK.location.AssetSidebarWidget.onChange(updateCallback);
-    appSDK.location.AssetSidebarWidget.onSave(saveCallback);
+    appSDK?.location?.AssetSidebarWidget?.onChange(updateCallback);
+    appSDK?.location?.AssetSidebarWidget?.onSave(saveCallback);
     setTimeout(() => {
       asyncOp();
     }, 1000);
