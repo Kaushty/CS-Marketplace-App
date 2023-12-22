@@ -92,6 +92,7 @@ const StackDashboardExtension = () => {
         <div className="app-component-content">
           <h4>{localeTexts.DashboardWidget.title}</h4>
           <p>{parse(localeTexts.DashboardWidget.body)}</p>
+          <p>Now powered by App SDK v2.0.0</p>
           <a
             target="_blank"
             rel="noreferrer"

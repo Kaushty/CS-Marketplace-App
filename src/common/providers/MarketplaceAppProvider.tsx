@@ -6,8 +6,6 @@ import { AppFailed } from "../../components/AppFailed";
 import { MarketplaceAppContext } from "../contexts/marketplaceContext";
 import UiLocation from "@contentstack/app-sdk/dist/src/uiLocation";
 
-const MARKETPLACE_APP_NAME: string = process.env.REACT_APP_MARKETPLACE_APP_NAME as string;
-
 type ProviderProps = {
   children?: React.ReactNode;
 };
